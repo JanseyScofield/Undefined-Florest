@@ -6,15 +6,13 @@ class Armas implements Itens{
     protected _qtd : number;
     protected _atqAdicional : number;
 
-    constructor(nome : string, qtd : number, atqAdicional : number){
+    constructor(nome : string, atqAdicional : number){
         if(nome === null || nome === "")
             throw new ItensErro("O nome da poção não pode ser nulo ou vazio!");
-        if(qtd <= 0)
-            throw new ItensErro("A quantidade da arma não pode ser menor ou igual a 0!");
         if(atqAdicional < 0)
             throw new ItensErro("O ataque adicional de uma espada não pode ser menor ou igual a 0.");
         this._nome = nome;
-        this._qtd = qtd;
+        this._qtd = 1;
         this._atqAdicional = atqAdicional;
     }
 
@@ -29,13 +27,7 @@ class Armas implements Itens{
     }
 
     get qtd() : number{
-        return this._qtd;
-    }
-
-    set qtd(novaQtd){ 
-        if(novaQtd < 0)
-            throw new ItensErro("A quantidade da arma não pode ser menor ou igual a 0!");
-        this._qtd = novaQtd;
+        return 1;
     }
 
     get atqAdicional() : number{
