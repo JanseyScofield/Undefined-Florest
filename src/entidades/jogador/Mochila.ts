@@ -1,10 +1,10 @@
-import EntidadeErro from "entidades/EntidadeErro";
 import Armas from "itens/armas/Armas";
 import Itens from "itens/Itens";
 import Pocao from "itens/pocoes/Pocao";
 import PocaoForca from "itens/pocoes/variedades/PocaoForca";
 import PocaoVelo from "itens/pocoes/variedades/PocaoVelo";
 import PocaoVida from "itens/pocoes/variedades/PocaoVida";
+import JogadorBase from "./JogadorBase";
 
 class Mochila{
     private itens : Array<Itens>;
@@ -41,7 +41,18 @@ class Mochila{
         if(index < 0 || index >= this.itens.length)
             throw new Error("O item não se encontra na mochila.");
         this.itens.splice(index - 1, 1);
-    } 
+    }
+
+    usarItem(index :  number, jogador : JogadorBase) : void{
+        if(index < 0 || index >= this.itens.length)
+            throw new Error("O item não se encontra na mochila.");
+        try{
+            this.itens[index - 1].acaoItem(jogador);
+        }
+        catch(e){
+            console.error("Erro ao usar o item: " + (e as Error).message);
+        }
+    }
 }
 
 export = Mochila;
