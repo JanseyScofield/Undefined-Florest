@@ -44,6 +44,14 @@ class Entidades{
         return this._nome;
     }
 
+    get vidaBase() :  number{
+        return this._vidaBase;
+    }
+    
+    get vidaAtual() :  number{
+        return this._vidaAtual;
+    }
+
     get atqAtual() : number{
         return this._atqAtual;
     }

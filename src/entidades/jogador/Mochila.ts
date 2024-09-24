@@ -17,10 +17,15 @@ class Mochila{
         this.itens = bagPadrao;
     }
 
+
     mostrarItens() : void{
         let iCont : number;
         for(iCont = 0; iCont < this.itens.length; iCont++)
             console.log(`${iCont + 1} - ${this.itens[iCont].nome} ${this.itens[iCont].qtd}x`)
+    }
+
+    qtdItens() : number{
+        return this.itens.length;
     }
 
     adicionarItem(item : Itens) : void{
@@ -40,14 +45,21 @@ class Mochila{
     removerItens(index : number) : void{
         if(index < 0 || index >= this.itens.length)
             throw new Error("O item não se encontra na mochila.");
-        this.itens.splice(index - 1, 1);
+        this.itens.splice(index, 1);
     }
 
     usarItem(index :  number, jogador : JogadorBase) : void{
         if(index < 0 || index >= this.itens.length)
             throw new Error("O item não se encontra na mochila.");
         try{
-            this.itens[index - 1].acaoItem(jogador);
+            const item : Itens = this.itens[index];
+            if(item instanceof Pocao){
+                const novaQtd = item.qtd - 1;
+                item.qtd = novaQtd;
+                if(novaQtd === 0)
+                    this.removerItens(index);
+            }
+            item.acaoItem(jogador);
         }
         catch(e){
             console.error("Erro ao usar o item: " + (e as Error).message);
