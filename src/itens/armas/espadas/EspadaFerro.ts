@@ -5,7 +5,7 @@ class EspadaFerro extends Armas{
         super("Espada de Ferro", 0.6);
     }
 
-    passiva(jogador : any) : void{
+    acaoItem(jogador : JogadorBase) : void{
         jogador.alterarVidaAtual(0.2);
         jogador.alterarAtqAtual(0.3);
     }

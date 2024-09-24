@@ -18,7 +18,7 @@ class Pocao implements Itens{
         this._tipo = tipo;
     }
 
-    acaoItem(): void {}
+    acaoItem(jogador : JogadorBase): void {}
 
     get nome() : string{
         return this._nome;
@@ -39,4 +39,4 @@ class Pocao implements Itens{
     }
 }
 
-exports = Pocao;
+export = Pocao;

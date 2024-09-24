@@ -2,7 +2,7 @@ interface Itens{
     nome : string;
     qtd : number;
 
-    acaoItem() : void;
+    acaoItem(jogador : JogadorBase) : void;
 }
 
 export = Itens;

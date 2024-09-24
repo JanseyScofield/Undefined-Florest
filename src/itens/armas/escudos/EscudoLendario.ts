@@ -5,7 +5,7 @@ class EscudoLendario extends Armas{
         super("Escudo de Lendário", 0.5);
     }
 
-    passiva(jogador : any) : void{
+    acaoItem(jogador : JogadorBase) : void{
         jogador.alterarVidaAtual(0.5);
         jogador.alterarAtqAtual(0.5);
         jogador.alterarDefAtual(1.2);

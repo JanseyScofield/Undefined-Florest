@@ -5,7 +5,7 @@ class EspadaLendaria extends Armas{
         super("Espada Lendária", 1);
     }
 
-    passiva(jogador : any){
+    acaoItem(jogador : JogadorBase){
         jogador.alterarVidaAtual(0.2);
         jogador.alterarAtqAtual(0.8);
         jogador.alterarDefAtual(0.4);

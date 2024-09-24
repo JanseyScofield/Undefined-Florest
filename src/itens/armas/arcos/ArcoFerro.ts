@@ -5,7 +5,7 @@ class ArcoFerro extends Armas{
         super("Arco de Ferro", 0.7);
     }
 
-    passiva(jogador : any) : void{
+    acaoItem(jogador : JogadorBase) : void{
         jogador.alterarAtqAtual(0.2);
         jogador.alterarVeloAtual(0.2);
     }

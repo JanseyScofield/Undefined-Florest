@@ -10,17 +10,13 @@ class Armas implements Itens{
         if(nome === null || nome === "")
             throw new ItensErro("O nome da poção não pode ser nulo ou vazio!");
         if(atqAdicional < 0)
-            throw new ItensErro("O ataque adicional de uma espada não pode ser menor ou igual a 0.");
+            throw new ItensErro("O ataque adicional de uma arma não pode ser menor ou igual a 0.");
         this._nome = nome;
         this._qtd = 1;
         this._atqAdicional = atqAdicional;
     }
 
-    acaoItem() : string{
-        return "Armas não possuem ações.";
-    }
-
-    passiva(jogador : any) : void{}
+    acaoItem(jogador  : JogadorBase) : void{}
 
     get nome() : string{
         return this._nome;
@@ -32,12 +28,6 @@ class Armas implements Itens{
 
     get atqAdicional() : number{
         return this._atqAdicional;
-    }
-
-    set atqAdicional(novoAtqAdd){
-        if(novoAtqAdd <= 0)
-            throw new ItensErro("O ataque adicional de uma espada não pode ser menor ou igual a 0.");
-        this._atqAdicional = novoAtqAdd;
     }
 }
 
