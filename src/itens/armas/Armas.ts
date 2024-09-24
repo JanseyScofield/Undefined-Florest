@@ -22,7 +22,7 @@ class Armas implements Itens{
         return "Armas não possuem ações.";
     }
 
-    passiva() : void{}
+    passiva(jogador : any) : void{}
 
     get nome() : string{
         return this._nome;
