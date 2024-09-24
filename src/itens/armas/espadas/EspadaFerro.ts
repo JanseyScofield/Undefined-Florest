@@ -2,10 +2,11 @@ import Armas from "../Armas";
 
 class EspadaFerro extends Armas{
     constructor(){
-        super("Espada de Ferro", 0.5);
+        super("Espada de Ferro", 0.6);
     }
 
     passiva(jogador : any) : void{
+        jogador.alterarVidaAtual(0.2);
         jogador.alterarAtqAtual(0.3);
     }
 }

@@ -6,8 +6,9 @@ class EspadaLendaria extends Armas{
     }
 
     passiva(jogador : any){
+        jogador.alterarVidaAtual(0.2);
         jogador.alterarAtqAtual(0.8);
-        jogador.alterarDefAtual(0.8);
+        jogador.alterarDefAtual(0.4);
         jogador.alterarVeloAtual(0.5);
     }
 }
