@@ -10,3 +10,5 @@ class EspadaFerro extends Armas{
         jogador.alterarAtqAtual(0.3);
     }
 }
+
+export = EspadaFerro

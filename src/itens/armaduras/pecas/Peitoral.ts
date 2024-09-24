@@ -9,3 +9,5 @@ class Peitoral extends Armaduras{
         jogador.alterarDefAtual(0.2);
     }
 }
+
+export = Peitoral

@@ -12,3 +12,5 @@ class EspadaLendaria extends Armas{
         jogador.alterarVeloAtual(0.5);
     }
 }
+
+export = EspadaLendaria

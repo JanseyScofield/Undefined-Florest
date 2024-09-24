@@ -11,3 +11,5 @@ class EscudoFerro extends Armas{
         jogador.alterarVeloAtual(-0.2);
     }
 }
+
+export = EscudoFerro

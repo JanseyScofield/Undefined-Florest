@@ -9,3 +9,5 @@ class Elmo extends Armaduras{
         jogador.alterarVidaAtual(0.2);
     }
 }
+
+export = Elmo

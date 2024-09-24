@@ -11,3 +11,5 @@ class ArcoLendario extends Armas{
         jogador.alterarVeloAtual(0.5);
     }
 }
+
+export = ArcoLendario

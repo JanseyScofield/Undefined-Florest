@@ -12,3 +12,5 @@ class EscudoLendario extends Armas{
         jogador.alterarVeloAtual(0.1);
     }
 }
+
+export = EscudoLendario

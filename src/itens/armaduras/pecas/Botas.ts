@@ -9,3 +9,5 @@ class Botas extends Armaduras{
         jogador.alterarVeloAtual(0.3);
     }
 }
+
+export = Botas
