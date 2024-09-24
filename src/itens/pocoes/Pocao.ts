@@ -1,5 +1,6 @@
 import Itens from "../Itens";
 import ItensErro from "../ItensErro";
+import JogadorBase = require("entidades/jogador/JogadorBase");
 
 class Pocao implements Itens{
     protected _nome : string;
@@ -24,7 +25,7 @@ class Pocao implements Itens{
         return this._qtd;
     }
 
-    set qtd(novaQtd){ 
+    set qtd(novaQtd : number){ 
         if(novaQtd < 0)
             throw new ItensErro("A quantidade de poções não pode ser menor ou igual a 0!");
         this._qtd = novaQtd;

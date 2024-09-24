@@ -1,3 +1,4 @@
+import JogadorBase from "entidades/jogador/JogadorBase";
 import Armaduras from "../Armaduras";
 
 class Elmo extends Armaduras{

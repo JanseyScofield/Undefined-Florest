@@ -65,6 +65,8 @@ class Mochila{
             console.error("Erro ao usar o item: " + (e as Error).message);
         }
     }
+
+    
 }
 
 export = Mochila;

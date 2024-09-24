@@ -1,4 +1,5 @@
 import Armas from "../Armas";
+import JogadorBase = require("entidades/jogador/JogadorBase");
 
 class ArcoLendario extends Armas{
     constructor(){

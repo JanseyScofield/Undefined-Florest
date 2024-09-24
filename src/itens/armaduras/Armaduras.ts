@@ -1,3 +1,4 @@
+import JogadorBase from "entidades/jogador/JogadorBase";
 import Itens from "itens/Itens";
 import ItensErro from "itens/ItensErro";
 

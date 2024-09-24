@@ -1,4 +1,5 @@
 import Pocao from "../Pocao";
+import JogadorBase = require("entidades/jogador/JogadorBase");
 
 class PocaoForca extends Pocao{
     constructor(qtd : number){
