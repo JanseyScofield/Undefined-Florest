@@ -64,6 +64,10 @@ class Entidades{
         return this._level;
     }
 
+    get vidaCombate() : number{
+        return this._vidaCombate;
+    }
+
     receberDano(atqAdv : number) : number{
         const modificador = Math.random();
         if(modificador > 0.7)
