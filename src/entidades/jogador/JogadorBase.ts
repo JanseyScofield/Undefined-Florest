@@ -65,6 +65,12 @@ class JogadorBase extends Entidades{
         this._vidaAtual * modificador;
     }
 
+    alterarVidaCombate(modificador: number) : void{
+        if(modificador === 0)
+            throw new JogadorErro("O modificador de vida não pode ser igual a 0.");
+        this._vidaCombate + modificador;
+    }
+
     alterarAtqAtual(modificador: number) : void{
         if(modificador === 0)
             throw new JogadorErro("O modificador de ataque não pode ser igual a 0.");

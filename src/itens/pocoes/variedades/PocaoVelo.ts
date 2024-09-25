@@ -7,7 +7,7 @@ class PocaoVelo extends Pocao{
     }
 
     acaoItem(jogador: JogadorBase): void {
-        jogador.alterVeloAtual(0.3);
+        jogador.alterarVeloAtual(0.3);
     }
 }
 
