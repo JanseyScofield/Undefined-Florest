@@ -8,6 +8,7 @@ class PocaoVida extends Pocao{
 
     acaoItem(jogador: JogadorBase): void {
         jogador.alterarVidaCombate(25);
+        super.acaoItem(jogador);
     }
 }
 

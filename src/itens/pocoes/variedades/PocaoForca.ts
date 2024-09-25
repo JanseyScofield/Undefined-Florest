@@ -8,6 +8,7 @@ class PocaoForca extends Pocao{
 
     acaoItem(jogador: JogadorBase): void {
         jogador.alterarAtqAtual(0.3);
+        super.acaoItem(jogador);
     }
 }
 

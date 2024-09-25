@@ -15,7 +15,9 @@ class Pocao implements Itens{
         this._qtd = qtd;
     }
 
-    acaoItem(jogador : JogadorBase): void {}
+    acaoItem(jogador : JogadorBase): void {
+        this._qtd -= 1;
+    }
 
     get nome() : string{
         return this._nome;

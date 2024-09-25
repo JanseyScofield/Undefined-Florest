@@ -52,14 +52,10 @@ class Mochila{
         if(index < 0 || index >= this.itens.length)
             throw new Error("O item não se encontra na mochila.");
         try{
-            const item : Itens = this.itens[index];
-            if(item instanceof Pocao){
-                const novaQtd = item.qtd - 1;
-                item.qtd = novaQtd;
-                if(novaQtd === 0)
-                    this.removerItens(index);
-            }
+            const item : Itens = this.itens[index];          
             item.acaoItem(jogador);
+            if(item.qtd === 0)
+                this.removerItens(index);
         }
         catch(e){
             console.error("Erro ao usar o item: " + (e as Error).message);
