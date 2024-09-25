@@ -2,7 +2,7 @@ import Entidades from "entidades/Entidades";
 import Armas from "itens/armas/Armas";
 import Mochila from "./Mochila";
 import JogadorErro from "./JogadorErro";
-
+import readline from "readline-sync";
 
 class JogadorBase extends Entidades{
     protected _xpProxLevel : number;
@@ -97,8 +97,31 @@ class JogadorBase extends Entidades{
         this._velAtual += this._velAtual * modificador;
     }
 
-    mostrarMochila() : void{
-        this._mochila.mostrarItens();
+    acessarMochila() : void{
+        let continuar : boolean = true;
+        while(continuar){
+            const opcao : string = readline.question("O que deseja fazer?\n1 - Ver itens\n2 - Usar item\n3 - Remover item\n4 - Sair\n");
+            let indexItem : number; 
+            switch(opcao){
+                case "1":    
+                    this._mochila.mostrarItens();
+                    break;
+                case "2":
+                    this._mochila.mostrarItens();
+                    indexItem = readline.question("Qual item deseja usar? ");
+                    this._mochila.usarItem(indexItem - 1, this);
+                    break;
+                case "3":
+                    this._mochila.mostrarItens();
+                    indexItem = readline.question("Qual item deseja remover? ");
+                    this._mochila.removerItens(indexItem - 1);
+                case "4":
+                    continuar = false;
+                    break;
+                default:
+                    console.log("Opção inválida.");
+            }
+        }
     }
 }
 
