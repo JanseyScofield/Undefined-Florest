@@ -8,11 +8,19 @@ class JogadorBase extends Entidades{
     protected _xpProxLevel : number;
     protected _xpAtual :  number;
     protected _mochila : Mochila;
+    protected _modfVida :  number;
+    protected _modfAtq :  number;
+    protected _modfDef :  number;
+    protected _modfVel :  number;
 
     constructor(nome : string, modfVida : number, modfAtq : number, modfDef : number, modfVelocidade : number, arma : Armas){
         super(nome, modfVida, modfAtq,modfDef,modfVelocidade, 1);
         this._xpAtual = 0;
         this._xpProxLevel = 10;
+        this._modfVida = modfVida;
+        this._modfAtq = modfAtq;
+        this._modfDef = modfDef;
+        this._modfVel = modfVelocidade;
         this._mochila = new Mochila(arma);
     }
 
@@ -50,10 +58,10 @@ class JogadorBase extends Entidades{
         this.mostrarStatus();
         console.log("-->");
         this._level ++;
-        this._vidaBase += this._vidaBase * this._level * 0.4;
-        this._atqBase += this._atqBase * this._level * 0.4;
-        this._defBase += this._defBase * this._level * 0.4;
-        this._velBase += this._velAtual * this._level * 0.4;
+        this._vidaBase += this._vidaBase * this._level * this._modfVida;
+        this._atqBase += this._atqBase * this._level * this._modfAtq;
+        this._defBase += this._defBase * this._level * this._modfDef;
+        this._velBase += this._velAtual * this._level * this._modfVel;
         this.mostrarStatus();
         this._xpAtual -= this._xpProxLevel;
         this._xpProxLevel *= 0.75;
