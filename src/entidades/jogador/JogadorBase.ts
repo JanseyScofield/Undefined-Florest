@@ -1,6 +1,7 @@
 import Entidades from "entidades/Entidades";
 import Armas from "itens/armas/Armas";
 import Mochila from "./Mochila";
+import JogadorErro from "./JogadorErro";
 
 
 class JogadorBase extends Entidades{
@@ -27,9 +28,18 @@ class JogadorBase extends Entidades{
         return this._xpProxLevel;
     }
 
+    comecarCombate() : void{
+        this._vidaAtual = this._vidaBase;
+        this._atqAtual = this._atqBase;
+        this._defAtual = this._defBase;
+        this._velAtual = this._velBase;
+        this._mochila.usarItem(0, this);
+        this._vidaCombate = this._vidaAtual;
+    }
+
     ganharXp(xpAdd : number) : void{
         if(xpAdd  <= 0)
-            throw new Error("O xp adicional não pode ser menor ou igual a 0.");
+            throw new JogadorErro("O xp adicional não pode ser menor ou igual a 0.");
         this._xpAtual += xpAdd;
         while(this._xpProxLevel <= this._xpAtual)
             this.subirNivel();
@@ -47,6 +57,30 @@ class JogadorBase extends Entidades{
         this.mostrarStatus();
         this._xpAtual -= this._xpProxLevel;
         this._xpProxLevel *= 0.75;
+    }
+
+    alterarVidaAtual(modificador: number) : void{
+        if(modificador === 0)
+            throw new JogadorErro("O modificador de vida não pode ser igual a 0.");
+        this._vidaAtual * modificador;
+    }
+
+    alterarAtqAtual(modificador: number) : void{
+        if(modificador === 0)
+            throw new JogadorErro("O modificador de ataque não pode ser igual a 0.");
+        this._atqAtual * modificador;
+    }
+
+    alterarDefAtual(modificador: number) : void{
+        if(modificador === 0)
+            throw new JogadorErro("O modificador de defesa não pode ser igual a 0.");
+        this._defAtual * modificador;
+    }
+
+    alterarVeloAtual(modificador: number) : void{
+        if(modificador === 0)
+            throw new JogadorErro("O modificador de velocidade não pode ser igual a 0.");
+        this._velAtual * modificador;
     }
 
 }
