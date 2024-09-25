@@ -60,6 +60,10 @@ class Entidades{
         return this._velAtual;
     }
 
+    get level() : number{
+        return this._level;
+    }
+
     receberDano(atqAdv : number) : number{
         const modificador = Math.random();
         const dano = (atqAdv * modificador) - this._defAtual;
