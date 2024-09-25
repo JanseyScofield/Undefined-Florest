@@ -66,6 +66,8 @@ class Entidades{
 
     receberDano(atqAdv : number) : number{
         const modificador = Math.random();
+        if(modificador > 0.7)
+            console.log("Dano crítico!");
         const dano = (atqAdv * modificador) - this._defAtual;
         this._vidaCombate -=  dano;
         return dano;
