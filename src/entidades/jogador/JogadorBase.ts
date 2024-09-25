@@ -91,4 +91,4 @@ class JogadorBase extends Entidades{
 
 }
 
-export = JogadorBase;
+export default JogadorBase;

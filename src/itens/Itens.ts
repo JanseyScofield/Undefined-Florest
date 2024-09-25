@@ -1,4 +1,4 @@
-import JogadorBase = require("entidades/jogador/JogadorBase");
+import JogadorBase from "entidades/jogador/JogadorBase";
 
 interface Itens{
     nome : string;
@@ -7,4 +7,4 @@ interface Itens{
     acaoItem(jogador : JogadorBase) : void;
 }
 
-export = Itens;
+export default Itens;

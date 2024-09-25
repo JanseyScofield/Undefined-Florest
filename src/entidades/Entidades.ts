@@ -69,4 +69,4 @@ class Entidades{
 
 }
 
-export = Entidades;
+export default Entidades;

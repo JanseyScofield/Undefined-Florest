@@ -11,4 +11,4 @@ class Peitoral extends Armaduras{
     }
 }
 
-export = Peitoral
+export default Peitoral

@@ -1,5 +1,5 @@
 import Pocao from "../Pocao";
-import JogadorBase = require("entidades/jogador/JogadorBase");
+import JogadorBase from "entidades/jogador/JogadorBase";
 
 class PocaoVida extends Pocao{
     constructor(qtd : number){
@@ -11,4 +11,4 @@ class PocaoVida extends Pocao{
     }
 }
 
-export = PocaoVida
+export default PocaoVida;

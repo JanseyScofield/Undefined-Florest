@@ -1,5 +1,5 @@
 import Armas from "../Armas";
-import JogadorBase = require("entidades/jogador/JogadorBase");
+import JogadorBase from "entidades/jogador/JogadorBase";
 
 class EscudoFerro extends Armas{
     constructor(){
@@ -13,4 +13,4 @@ class EscudoFerro extends Armas{
     }
 }
 
-export = EscudoFerro
+export default EscudoFerro

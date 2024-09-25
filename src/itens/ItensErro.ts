@@ -6,4 +6,4 @@ class ItensErro extends Error {
 }
 
 
-export = ItensErro;
+export default ItensErro;

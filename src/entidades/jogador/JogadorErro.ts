@@ -5,4 +5,4 @@ class JogadorErro extends Error{
     }
 }
 
-export = JogadorErro;
+export default JogadorErro;

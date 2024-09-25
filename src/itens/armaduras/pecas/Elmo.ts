@@ -11,4 +11,4 @@ class Elmo extends Armaduras{
     }
 }
 
-export = Elmo
+export default Elmo

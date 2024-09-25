@@ -11,4 +11,4 @@ class Botas extends Armaduras{
     }
 }
 
-export = Botas
+export default Botas

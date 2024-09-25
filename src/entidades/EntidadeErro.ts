@@ -5,4 +5,4 @@ class EntidadeErro extends Error{
     }
 }
 
-export = EntidadeErro;
+export default EntidadeErro;

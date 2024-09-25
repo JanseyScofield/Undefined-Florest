@@ -69,4 +69,4 @@ class Mochila{
     
 }
 
-export = Mochila;
+export default Mochila;

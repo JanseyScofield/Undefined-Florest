@@ -32,4 +32,4 @@ class Armaduras implements Itens{
     }
 }
 
-export = Armaduras;
+export default Armaduras;

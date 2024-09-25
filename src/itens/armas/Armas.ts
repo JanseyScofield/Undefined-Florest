@@ -1,6 +1,6 @@
 import Itens from "itens/Itens";
 import ItensErro from "itens/ItensErro";
-import JogadorBase = require("entidades/jogador/JogadorBase");
+import JogadorBase from "entidades/jogador/JogadorBase";
 
 class Armas implements Itens{
     protected _nome : string;
@@ -32,4 +32,4 @@ class Armas implements Itens{
     }
 }
 
-export = Armas;
+export default Armas;

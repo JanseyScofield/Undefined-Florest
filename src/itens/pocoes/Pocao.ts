@@ -1,6 +1,6 @@
 import Itens from "../Itens";
 import ItensErro from "../ItensErro";
-import JogadorBase = require("entidades/jogador/JogadorBase");
+import JogadorBase from "entidades/jogador/JogadorBase";
 
 class Pocao implements Itens{
     protected _nome : string;
@@ -32,4 +32,4 @@ class Pocao implements Itens{
     }
 }
 
-export = Pocao;
+export default Pocao;
