@@ -1,6 +1,7 @@
 {
   "name": "undefined-florest",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "node ./build/index.js",
     "build": "tsc"
