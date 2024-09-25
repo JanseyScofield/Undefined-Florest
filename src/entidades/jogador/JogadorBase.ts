@@ -62,7 +62,7 @@ class JogadorBase extends Entidades{
     alterarVidaAtual(modificador: number) : void{
         if(modificador === 0)
             throw new JogadorErro("O modificador de vida não pode ser igual a 0.");
-        this._vidaAtual * modificador;
+        this._vidaAtual += this._vidaAtual * modificador;
     }
 
     alterarVidaCombate(modificador: number) : void{
@@ -74,21 +74,24 @@ class JogadorBase extends Entidades{
     alterarAtqAtual(modificador: number) : void{
         if(modificador === 0)
             throw new JogadorErro("O modificador de ataque não pode ser igual a 0.");
-        this._atqAtual * modificador;
+        this._atqAtual += this._atqAtual * modificador;
     }
 
     alterarDefAtual(modificador: number) : void{
         if(modificador === 0)
             throw new JogadorErro("O modificador de defesa não pode ser igual a 0.");
-        this._defAtual * modificador;
+        this._defAtual += this._defAtual* modificador;
     }
 
     alterarVeloAtual(modificador: number) : void{
         if(modificador === 0)
             throw new JogadorErro("O modificador de velocidade não pode ser igual a 0.");
-        this._velAtual * modificador;
+        this._velAtual += this._velAtual * modificador;
     }
 
+    mostrarMochila() : void{
+        this._mochila.mostrarItens();
+    }
 }
 
 export default JogadorBase;
