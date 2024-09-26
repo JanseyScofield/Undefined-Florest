@@ -53,7 +53,7 @@ class JogadorBase extends Entidades{
             this.subirNivel();
     }    
 
-    subirNivel() : void{
+    private subirNivel() : void{
         console.log("Level Up!");
         this.mostrarStatus();
         console.log("-->");
