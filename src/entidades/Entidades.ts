@@ -69,10 +69,15 @@ class Entidades{
     }
 
     receberDano(atqAdv : number) : number{
-        const modificador = Math.random();
-        if(modificador > 0.7)
+        const modificador1 = Math.random();
+        const modificador2 = Math.random();
+        if(modificador1 > 0.7)
             console.log("Dano crítico!");
-        const dano = (atqAdv * modificador) - this._defAtual;
+        if(modificador2 > 0.7)
+            console.log(`Grande defesa, ${this._nome}!`);
+        let dano = (atqAdv * modificador1) - (this._defAtual * modificador2);
+        dano =  dano < 0? 0 : Math.round(dano);
+        console.log(`${this._nome} recebeu ${dano} de dano!`);
         this._vidaCombate -=  dano;
         return dano;
     }

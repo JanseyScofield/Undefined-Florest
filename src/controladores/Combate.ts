@@ -20,13 +20,13 @@ class Combate{
 
         while(true){
             const vidaCombateJog : number = Math.round(this._jogador.vidaCombate);
-            const vidaAtualJog : number = Math.round(this._jogador.vidaAtual);
+            const vidaAtualJog : number =  Math.round(this._jogador.vidaAtual);
 
-            const vidaCombateIn : number = Math.round(this._inimigo.vidaCombate);
-            const vidaAtualIn : number = Math.round(this._inimigo.vidaAtual);
-            this._jogador.mostrarStatus();
-            console.log("-----------------------------------------------------")
+            const vidaCombateIn : number =  Math.round(this._inimigo.vidaCombate);
+            const vidaAtualIn : number =  Math.round(this._inimigo.vidaAtual);
+
             console.log(`${this._jogador.nome} lvl ${this._jogador.level}\n Vida: ${vidaCombateJog}/${vidaAtualJog}`);
+            console.log("-----------------------------------------------------")
             console.log(`${this._inimigo.nome} lvl ${this._inimigo.level}\n Vida: ${vidaCombateIn}/${vidaAtualIn}`);
 
             const opcao : string = readline.question("O que deseja fazer?\n1 - Atacar   2 - Bolsa\n");
@@ -47,7 +47,7 @@ class Combate{
 
             if(fimCombate && this._jogador.vidaCombate > 0){
                 console.log("Vitória!");
-                console.log(`Você recebeu  ${this._inimigo.xpVitoria} de xp!`);
+                console.log(`Você recebeu ${this._inimigo.xpVitoria} de xp!`);
                 this._jogador.ganharXp(this._inimigo.xpVitoria);
                 vitoria = true;
                 break;
