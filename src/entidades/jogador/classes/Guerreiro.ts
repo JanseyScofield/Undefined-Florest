@@ -9,7 +9,3 @@ class Guerreiro extends JogadorBase{
 }
 
 export default Guerreiro;
-
-const novoJogador = new Guerreiro("Jansey");
-
-novoJogador.mostrarStatus()
