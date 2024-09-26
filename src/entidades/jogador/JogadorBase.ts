@@ -3,6 +3,7 @@ import Armas from "itens/armas/Armas";
 import Mochila from "./Mochila";
 import JogadorErro from "./JogadorErro";
 import readline from "readline-sync";
+import Itens from "itens/Itens";
 
 class JogadorBase extends Entidades{
     protected _xpProxLevel : number;
@@ -122,6 +123,10 @@ class JogadorBase extends Entidades{
                     console.log("Opção inválida.");
             }
         }
+    }
+
+    adicionarItem(item : Itens) : void{
+        this._mochila.adicionarItem(item);
     }
 }
 
