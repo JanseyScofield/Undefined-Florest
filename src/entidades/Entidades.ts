@@ -77,6 +77,7 @@ class Entidades{
             console.log(`Grande defesa, ${this._nome}!`);
         let dano = (atqAdv * modificador1) - (this._defAtual * modificador2);
         dano =  dano < 0? 0 : Math.round(dano);
+        dano += 2;
         console.log(`${this._nome} recebeu ${dano} de dano!`);
         this._vidaCombate -=  dano;
         return dano;
