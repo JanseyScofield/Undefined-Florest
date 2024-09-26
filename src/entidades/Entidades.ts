@@ -72,7 +72,7 @@ class Entidades{
         const modificador1 = Math.random();
         const modificador2 = Math.random();
         if(modificador1 > 0.7)
-            console.log("Dano crítico!");
+            console.log(`${this._nome} recebeu um ataque crítico!`);
         if(modificador2 > 0.7)
             console.log(`Grande defesa, ${this._nome}!`);
         let dano = (atqAdv * modificador1) - (this._defAtual * modificador2);

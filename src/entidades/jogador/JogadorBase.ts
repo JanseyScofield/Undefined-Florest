@@ -62,9 +62,9 @@ class JogadorBase extends Entidades{
         this._atqBase += this._atqBase * this._level * this._modfAtq;
         this._defBase += this._defBase * this._level * this._modfDef;
         this._velBase += this._velAtual * this._level * this._modfVel;
-        this.mostrarStatus();
         this._xpAtual -= this._xpProxLevel;
-        this._xpProxLevel *= 0.75;
+        this._xpProxLevel += (7 * (this._level - 1));
+        this.mostrarStatus();
     }
 
     alterarVidaAtual(modificador: number) : void{

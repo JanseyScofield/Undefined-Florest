@@ -17,7 +17,9 @@ class Combate{
         let vitoria : boolean;
         this._inimigo.passiva(this._jogador)
         this._jogador.comecarCombate();
-
+        
+        console.log(`${this._jogador.nome} encontrou ${this._inimigo.nome}!`);
+        
         while(true){
             const vidaCombateJog : number = Math.round(this._jogador.vidaCombate);
             const vidaAtualJog : number =  Math.round(this._jogador.vidaAtual);
@@ -25,10 +27,12 @@ class Combate{
             const vidaCombateIn : number =  Math.round(this._inimigo.vidaCombate);
             const vidaAtualIn : number =  Math.round(this._inimigo.vidaAtual);
 
-            console.log(`${this._jogador.nome} lvl ${this._jogador.level}\n Vida: ${vidaCombateJog}/${vidaAtualJog}`);
-            console.log("-----------------------------------------------------")
+            console.log("-----------------------------------------------------");
+            console.log(`${this._jogador.nome} lvl ${this._jogador.level}\n Vida: ${vidaCombateJog}/${vidaAtualJog}\n`);
+            
             console.log(`${this._inimigo.nome} lvl ${this._inimigo.level}\n Vida: ${vidaCombateIn}/${vidaAtualIn}`);
-
+            console.log("-----------------------------------------------------");
+            
             const opcao : string = readline.question("O que deseja fazer?\n1 - Atacar   2 - Bolsa\n");
             if(opcao === "1"){
                 if(this._jogador.velocidadeAtual >= this._inimigo.velocidadeAtual)
