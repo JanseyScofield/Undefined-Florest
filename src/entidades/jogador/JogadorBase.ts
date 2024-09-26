@@ -41,7 +41,7 @@ class JogadorBase extends Entidades{
         this._atqAtual = this._atqBase;
         this._defAtual = this._defBase;
         this._velAtual = this._velBase;
-        this._mochila.usarItem(0, this);
+        this._mochila.usarArmasArmaduras(this);
         this._vidaCombate = this._vidaAtual;
     }
 
