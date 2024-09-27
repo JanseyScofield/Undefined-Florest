@@ -33,8 +33,7 @@ class Mochila {
             let iCont: number;
             for (iCont = 0; iCont < this.itens.length; iCont++)
                 if (this.itens[iCont].nome === item.nome) {
-                    const qtdPocoes: number = item.qtd;
-                    item.qtd = qtdPocoes + 1;
+                    this.itens[iCont].qtd++;
                     break;
                 }
         }
