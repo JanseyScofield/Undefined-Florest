@@ -8,7 +8,7 @@ class HomemPicareta extends Inimigos{
     }
 
     passiva(jogador : JogadorBase): void {
-        jogador.alterarVidaAtual(-0.2);
+        jogador.alterarAtqAtual(-0.2);
         jogador.alterarVeloAtual(-0.2);
     }
 }

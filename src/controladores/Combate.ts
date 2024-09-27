@@ -15,8 +15,9 @@ class Combate{
     interacoes() : boolean{
         let fimCombate : boolean = false;
         let vitoria : boolean;
-        this._inimigo.passiva(this._jogador)
         this._jogador.comecarCombate();
+        this._inimigo.passiva(this._jogador);
+        this._jogador.posNerfsInimigos();
         
         console.log(`${this._jogador.nome} encontrou ${this._inimigo.nome}!`);
         

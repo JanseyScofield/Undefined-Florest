@@ -7,11 +7,9 @@ class Boss extends Inimigos{
     }
 
     passiva(jogador: JogadorBase): void {
-        jogador.alterarVidaCombate(-10);
-    }
-
-    lancaChamas() : void{
-        console.log("Tudo está pegando fogo!");
+        jogador.alterarAtqAtual(-0.4);
+        jogador.alterarDefAtual(-0.4);
+        jogador.alterarVeloAtual(-0.4);      
     }
 }
 

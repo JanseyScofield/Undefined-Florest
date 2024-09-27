@@ -26,7 +26,7 @@ class JogadorBase extends Entidades{
     }
 
     mostrarStatus() : void{
-        console.log(`${this._nome}\nLevel: ${this._level}\nVida: ${this._vidaAtual}\nAtaque: ${this._atqAtual}\nDefesa: ${this._defAtual}\nVelocidade: ${this._velAtual}\nExp: ${this._xpAtual}/${this._xpProxLevel}`);
+        console.log(`${this._nome}\nLevel: ${this._level}\nVida: ${this._vidaBase}\nAtaque: ${this._atqBase}\nDefesa: ${this._defBase}\nVelocidade: ${this._velBase}\nExp: ${this._xpAtual}/${this._xpProxLevel}`);
     }
 
     get xpAtual() : number{
@@ -42,6 +42,9 @@ class JogadorBase extends Entidades{
         this._atqAtual = this._atqBase;
         this._defAtual = this._defBase;
         this._velAtual = this._velBase;
+    }
+
+    posNerfsInimigos() : void{
         this._mochila.usarArmasArmaduras(this);
         this._vidaCombate = this._vidaAtual;
     }
@@ -59,10 +62,10 @@ class JogadorBase extends Entidades{
         this.mostrarStatus();
         console.log("-->");
         this._level ++;
-        this._vidaBase += this._vidaBase * this._level * this._modfVida;
-        this._atqBase += this._atqBase * this._level * this._modfAtq;
-        this._defBase += this._defBase * this._level * this._modfDef;
-        this._velBase += this._velAtual * this._level * this._modfVel;
+        this._vidaBase += this._vidaBase * this._modfVida/2;
+        this._atqBase += this._atqBase * this._modfAtq/2;
+        this._defBase += this._defBase * this._modfDef/2;
+        this._velBase += this._velAtual * this._modfVel/2;
         this._xpAtual -= this._xpProxLevel;
         this._xpProxLevel += (7 * (this._level - 1));
         this.mostrarStatus();
@@ -77,8 +80,9 @@ class JogadorBase extends Entidades{
     alterarVidaCombate(modificador: number) : void{
         if(modificador === 0)
             throw new JogadorErro("O modificador de vida não pode ser igual a 0.");
-        this._vidaCombate + modificador;
+        this._vidaCombate += modificador;
     }
+
 
     alterarAtqAtual(modificador: number) : void{
         if(modificador === 0)
