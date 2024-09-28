@@ -24,7 +24,7 @@ import EscudoLendario from "itens/armas/escudos/EscudoLendario";
 class UndefinedFlorest{
     private _jogador : JogadorBase;
     private _vivo : boolean =  true;
-    private _lore : string = `Você é servo do rei da cidade de Ainozama, vilarejo arrodeado de mata e rios. De repente, os moradores do local passam a sofrer ataques de criaturas desconhecidas e uma grande seca regional. Afim de descobrir possiveis causas para esses problemas, o rei lhe envia em uma missão extremamente desafiadora e arriscada, investigar a única floresta  totalmente inexplorada pela comunidade. Agora...Se cuide! Você tem apenas uma chance! Caso morra, terá voltar do zero! Seu objetivo é conseguir respostas, e claro, sobreviver a toda essa aventura!`;
+    private _lore : string = `Você é servo do rei da cidade de Ainozama, vilarejo arrodeado de mata e rios. De repente, os moradores do local passam a sofrer ataques de criaturas desconhecidas e uma grande seca regional. Afim de descobrir possiveis causas para esses problemas, o rei lhe envia em uma missão extremamente desafiadora e arriscada, investigar a única floresta  totalmente inexplorada pela comunidade. Agora...Se cuide! Você tem apenas uma chance! Caso morra, terá que voltar do zero! Seu objetivo é conseguir respostas, e claro, sobreviver a toda essa aventura!`;
 
     play() : void{
         while(true){
@@ -103,7 +103,7 @@ class UndefinedFlorest{
         this._vivo = combate1.interacoes();
         if(!this._vivo)
             return false;
-        console.log("- Jansey : Ufa! Você conseguiu derrota-la! Continue assim! Não vai ser nem um pouco tranquilo! A cada etapa que passar, você  tem dois caminhos a seguir: avançar ou explorar um pouco a floresta para ganhar itens e experiência antes. O que deseja fazer agora?");
+        console.log("- Jansey : Ufa! Você conseguiu derrota-la! Continue assim! Não vai ser nem um pouco tranquilo! A cada etapa que passar, você tem dois caminhos a seguir: avançar ou explorar um pouco a floresta para ganhar itens e experiência antes. O que deseja fazer agora?");
         this.interfaceEtapas(1);
         return this._vivo;        
     }
@@ -145,7 +145,7 @@ class UndefinedFlorest{
         const boss : Boss = new Boss();
         const combate3 : Combate = new Combate(this._jogador, boss);
 
-        console.log("- Jansey : Olha aquilo! Que base enorme! Aqui eles jogam pedras nos rios e os injetam veneno nos animais para crescerem! Achamos o motivo de todos os problemas de Ainozama! Vamos! Não podemos deixar isso tudo continuar!");
+        console.log("- Jansey : Olha aquilo! Que base enorme! Aqui eles jogam pedras nos rios e injetam veneno nos animais para crescerem! Achamos o motivo de todos os problemas de Ainozama! Vamos! Não podemos deixar isso tudo continuar!");
 
         this._vivo = combate1.interacoes();
         if(!this._vivo)
@@ -158,7 +158,7 @@ class UndefinedFlorest{
         console.log("- Garimpeiro : Eu sou o maior garimpeiro da região! Exploro todas essas terras para pegar todas as pedras preciosas que elas podem me oferecer!! Não atrapalhem meus planos! Saiam daqui!");
         console.log("- Jansey : Não sairemos até salvarmos nosso vilarejo! Por que faz tudo isso? Não quer apenas as pedras? Pra que maltratar a natureza dessa forma?");
         console.log("- Garimpeiro : Todos esses vilarejos me atrapalham! Há muitos mineiros por esses locais,  mas os reis não nos permitem mineirar. Nosso objetivo é ataca-los aos poucos pela sua população! Vamos deixa-los sem água e ataca-los com animais ferozes até sairem por vontade própria!");
-        console.log(`- Jansey : Vamos acabar contigo! Tenho uma coisa pra ti ${this._jogador.nome}!`);
+        console.log(`- Jansey : Vamos acabar contigo! Tenho uma coisa pra ti, ${this._jogador.nome}!`);
 
         let itemLendario : Itens;
         if(this._jogador instanceof Guerreiro)
